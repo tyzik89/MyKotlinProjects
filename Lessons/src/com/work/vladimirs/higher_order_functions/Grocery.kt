@@ -16,7 +16,7 @@ fun main() {
     //Sum spent on vegetables
     val sumVeget = groceries
         .filter { it.category == "Vegetables" }
-        .sumOf { it.quantity * it.unitPrice}
+        .sumByDouble { it.quantity * it.unitPrice}
     println("Sum all vegetables = ${sumVeget}")
 
     //Name's list of all groceries, whose costs lower 5.0
@@ -28,7 +28,7 @@ fun main() {
     //Common costs by category
     groceries
         .groupBy { it.category }
-        .forEach { it -> println("${it.key}: ${it.value.sumOf { it.unitPrice * it.quantity }}") }
+        .forEach { it -> println("${it.key}: ${it.value.sumByDouble { it.unitPrice * it.quantity }}") }
 
     //Name of all groceries, then not in bottle and group by type (unit)
     groceries
