@@ -2,9 +2,13 @@ package com.work.vladimirs
 
 import java.io.File
 import javax.sound.sampled.AudioSystem
+import kotlinx.coroutines.*
 
 fun main() {
-    playBeats("x-x-x-x-x-x-x-", "src\\main\\resources\\audio\\toms.aiff")
+    GlobalScope.launch {
+        playBeats("x-x-x-x-x-x-x-", "src\\main\\resources\\audio\\toms.aiff")
+    }
+
     playBeats("x-----x-------", "src\\main\\resources\\audio\\crash_cymbal.aiff")
 }
 
